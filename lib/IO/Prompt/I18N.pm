@@ -1,7 +1,7 @@
 package IO::Prompt::I18N;
 
 our $DATE = '2014-12-11'; # DATE
-our $VERSION = '0.77'; # VERSION
+our $VERSION = '0.78'; # VERSION
 
 use 5.010001;
 use strict;
@@ -61,9 +61,9 @@ sub confirm {
     $opts //= {};
 
     state $supported_langs = {
-        en => {yes_words=>[qw/y yes/], no_words=>[qw/n no/]},
-        fr => {yes_words=>[qw/o oui/], no_words=>[qw/n non/]},
-        id => {yes_words=>[qw/y ya/] , no_words=>[qw/t tidak/]},
+        en => {yes_words=>[qw/y yes/], no_words=>[qw/n no/]   , text=>'Confirm'},
+        fr => {yes_words=>[qw/o oui/], no_words=>[qw/n non/]  , text=>'Confirmer'},
+        id => {yes_words=>[qw/y ya/] , no_words=>[qw/t tidak/], text=>'Konfirmasi'},
     };
 
     $opts->{lang} //= do {
@@ -95,7 +95,7 @@ sub confirm {
 
     my $suffix;
     my $show_default = 1;
-    unless ($text =~ /[()?]/) {
+    unless ($text =~ /[?]/) {
         $text .=
             join("",
                  " (",
@@ -136,7 +136,7 @@ IO::Prompt::I18N - Prompt user question, with some options (including I18N)
 
 =head1 VERSION
 
-This document describes version 0.77 of IO::Prompt::I18N (from Perl distribution IO-Prompt-I18N), released on 2014-12-11.
+This document describes version 0.78 of IO::Prompt::I18N (from Perl distribution IO-Prompt-I18N), released on 2014-12-11.
 
 =head1 SYNOPSIS
 
