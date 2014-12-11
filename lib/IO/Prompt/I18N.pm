@@ -1,7 +1,7 @@
 package IO::Prompt::I18N;
 
 our $DATE = '2014-12-11'; # DATE
-our $VERSION = '0.78'; # VERSION
+our $VERSION = '0.79'; # VERSION
 
 use 5.010001;
 use strict;
@@ -99,9 +99,13 @@ sub confirm {
         $text .=
             join("",
                  " (",
-                 join("/", map {defined($default) && $_ eq $default ?
-                                    uc($_) : lc($_)} (
-                     @{ $opts->{yes_words} }, @{ $opts->{no_words} })),
+                 join("/",
+                      (map {$opts->{default} ? uc($_) : lc($_)}
+                           @{ $opts->{yes_words} }),
+                      (map {defined($opts->{default}) && !$opts->{default} ?
+                                        uc($_) : lc($_)}
+                           @{ $opts->{no_words} }),
+                  ),
                  ")?",
              );
         $show_default = 0; # because we already indicate which using uppercase
@@ -136,7 +140,7 @@ IO::Prompt::I18N - Prompt user question, with some options (including I18N)
 
 =head1 VERSION
 
-This document describes version 0.78 of IO::Prompt::I18N (from Perl distribution IO-Prompt-I18N), released on 2014-12-11.
+This document describes version 0.79 of IO::Prompt::I18N (from Perl distribution IO-Prompt-I18N), released on 2014-12-11.
 
 =head1 SYNOPSIS
 

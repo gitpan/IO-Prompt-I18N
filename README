@@ -3,7 +3,7 @@ NAME
     I18N)
 
 VERSION
-    This document describes version 0.78 of IO::Prompt::I18N (from Perl
+    This document describes version 0.79 of IO::Prompt::I18N (from Perl
     distribution IO-Prompt-I18N), released on 2014-12-11.
 
 SYNOPSIS
