@@ -1,7 +1,7 @@
 package IO::Prompt::I18N;
 
-our $DATE = '2014-12-11'; # DATE
-our $VERSION = '0.79'; # VERSION
+our $DATE = '2015-01-03'; # DATE
+our $VERSION = '0.80'; # VERSION
 
 use 5.010001;
 use strict;
@@ -140,7 +140,7 @@ IO::Prompt::I18N - Prompt user question, with some options (including I18N)
 
 =head1 VERSION
 
-This document describes version 0.79 of IO::Prompt::I18N (from Perl distribution IO-Prompt-I18N), released on 2014-12-11.
+This document describes version 0.80 of IO::Prompt::I18N (from Perl distribution IO-Prompt-I18N), released on 2015-01-03.
 
 =head1 SYNOPSIS
 
@@ -227,15 +227,6 @@ Set default value.
 
 =back
 
-=head1 TODO
-
-Option to stty off (e.g. when prompting password).
-
-Validation using coderef (probably with a C<validation> key which can be regex
-or coderef, and then deprecate C<regex>).
-
-Timeout, like L<Prompt::Timeout>.
-
 =head1 SEE ALSO
 
 L<IO::Prompt>, L<IO::Prompt::Tiny>, L<Term::Prompt>, L<Prompt::Timeout>
@@ -262,7 +253,7 @@ perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by perlancar@cpan.org.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
